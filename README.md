@@ -16,6 +16,22 @@ A simple, secure way to log in to WordPress using Auth0. Hides the default login
 
 Watch this video to see how to configure your Auth0 application and hook it up to WordPress.
 
+## Installation
+
+You can install this plugin in one of two ways:
+
+### Option 1: WordPress Plugin Repository (Basic)
+
+Install this plugin via the WordPress Plugin Repository by downloading it from: https://wordpress.org/plugins/aysnc-auth0-login/ or by searching for "Aysnc Auth0 Login" in your WordPress admin panel.
+
+### Option 2: Composer (Recommended)
+
+Install this plugin via Composer by running the following command:
+
+```bash
+composer require aysnc/aysnc-auth0-login
+```
+
 ## Configuration
 
 You can configure the plugin either through the WordPress admin interface or by defining constants in your wp-config.php file (recommended for enhanced security).

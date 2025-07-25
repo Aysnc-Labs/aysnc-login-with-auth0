@@ -1,3 +1,7 @@
+# Ignore Open Source stuff in export
+.github export-ignore
+CONTRIBUTING.md export-ignore
+
 # Ignore tests in export.
 /tests/ export-ignore
 

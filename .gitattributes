@@ -1,0 +1,5 @@
+# Ignore tests in export.
+/tests/ export-ignore
+
+# Ignore WP Org files in export.
+readme.txt export-ignore

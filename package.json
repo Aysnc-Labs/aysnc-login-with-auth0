@@ -6,7 +6,7 @@
   "scripts": {
     "env:start": "wp-env start",
     "env:stop": "wp-env stop",
-    "lint:php": "composer lint",
+    "lint:php": "wp-env run --env-cwd='wp-content/plugins/aysnc-auth0-login' cli composer run-script lint",
     "static-analysis:php": "composer static-analysis",
     "test:php": "wp-env run --env-cwd='wp-content/plugins/aysnc-auth0-login' tests-wordpress vendor/bin/phpunit",
     "test:e2e": "wp-scripts test-playwright --config .tests/e2e/playwright.config.ts",

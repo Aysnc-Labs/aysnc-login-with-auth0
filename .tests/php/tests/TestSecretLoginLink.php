@@ -63,7 +63,7 @@ class TestSecretLoginLink extends WP_UnitTestCase {
 	 * @return void
 	 */
 	public function test_get_link(): void {
-		$this->assertEquals( 'http://test.aysncwordpress.com/abcdef', SecretLoginLink::get_link() );
+		$this->assertEquals( 'http://localhost:8889/abcdef', SecretLoginLink::get_link() );
 	}
 
 	/**

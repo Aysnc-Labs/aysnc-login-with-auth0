@@ -27,11 +27,9 @@
   },
   "require-dev": {
     "roots/wordpress": "6.8.2",
-    "wpackagist-theme/twentytwentyfive": "*",
     "composer/installers": "^v1.12.0",
     "squizlabs/php_codesniffer": "*",
     "phpunit/phpunit": "^9.6.23",
-    "wp-phpunit/wp-phpunit": "*",
     "yoast/phpunit-polyfills": "^4.0.0",
     "phpstan/phpstan": "^2.1.17",
     "wp-coding-standards/wpcs": "*"

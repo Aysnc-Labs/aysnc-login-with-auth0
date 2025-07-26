@@ -8,26 +8,11 @@ on:
     branches:
       - main
 
-env:
-  TESTS_DB_NAME: aysnc-tests
-  TESTS_DB_USER: root
-  TESTS_DB_PASSWORD: root
-  TESTS_DB_HOST: 0.0.0.0
-
 jobs:
   test:
     runs-on: ubuntu-latest
     env:
       PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD: 1
-    services:
-      mysql:
-        image: mariadb:10.6
-        env:
-          MYSQL_ROOT_PASSWORD: ${{ env.TESTS_DB_PASSWORD }}
-          MYSQL_DATABASE: ${{ env.TESTS_DB_NAME }}
-        ports:
-          - 3306:3306
-        options: --health-cmd="mysqladmin ping" --health-interval=5s --health-timeout=5s --health-retries=3
 
     steps:
       - name: Checkout repository
@@ -44,6 +29,9 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '24'
+
+      - name: Set up Test environment
+        run: npm run env:start
 
       - name: Composer cache
         id: composer-cache
@@ -93,16 +81,13 @@ jobs:
         run: npx playwright install chromium --with-deps
 
       - name: PHP Coding standards
-        run: composer lint
+        run: npm run lint:php
 
       - name: PHPUnit Tests
-        run: composer test
+        run: npm run test:php
 
       - name: PHP Static Analysis
-        run: composer static-analysis
-
-      - name: Set up E2E environment
-        run: npm run env:start
+        run: npm run static-analysis:php
 
       - name: E2E Tests
         run: npm run test:e2e

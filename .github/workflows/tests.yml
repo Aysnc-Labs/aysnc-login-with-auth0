@@ -30,9 +30,6 @@ jobs:
         with:
           node-version: '24'
 
-      - name: Set up Test environment
-        run: npm run env:start
-
       - name: Composer cache
         id: composer-cache
         uses: actions/cache@v4
@@ -79,6 +76,9 @@ jobs:
       - name: Install only Chromium for Playwright
         if: steps.playwright-chromium-cache.outputs.cache-hit != 'true'
         run: npx playwright install chromium --with-deps
+
+      - name: Set up Test environment
+        run: npm run env:start
 
       - name: PHP Coding standards
         run: npm run lint:php

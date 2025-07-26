@@ -2,6 +2,8 @@
 
 # Auth0 Login for WordPress
 
+![GitHub Actions](https://github.com/Aysnc-Labs/aysnc-auth0-login/actions/workflows/tests.yml/badge.svg)
+
 A simple, secure way to log in to WordPress using Auth0. Hides the default login screen with a redirect to Auth0.
 
 ## Features

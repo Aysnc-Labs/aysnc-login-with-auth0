@@ -59,4 +59,23 @@ class TestAdmin extends WP_UnitTestCase {
 			has_action( 'update_option_aysnc_auth0_secret_login_token', [ Admin::class, 'flush_permalinks_on_save' ] )
 		);
 	}
+
+	/**
+	 * Test get_admin_capability.
+	 *
+	 * @covers Admin::get_admin_capability()
+	 *
+	 * @return void
+	 */
+	public function test_get_admin_capability(): void {
+		$this->assertEquals( 'manage_options', Admin::get_admin_capability() );
+
+		$filter = fn () => 'test_capability';
+		add_filter( 'aysnc_auth0_login_admin_capability', $filter );
+
+		$this->assertEquals( 'test_capability', Admin::get_admin_capability() );
+
+		remove_filter( 'aysnc_auth0_login_admin_capability', $filter );
+		$this->assertEquals( 'manage_options', Admin::get_admin_capability() );
+	}
 }

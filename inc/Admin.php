@@ -161,7 +161,7 @@ class Admin {
 		add_options_page(
 			__( 'Auth0 Settings', 'aysnc-auth0-login' ),
 			__( 'Auth0', 'aysnc-auth0-login' ),
-			'manage_options',
+			self::get_admin_capability(),
 			self::$option_group,
 			[ __CLASS__, 'render_options_page' ]
 		);
@@ -492,5 +492,19 @@ class Admin {
 
 		// Enqueue the script.
 		wp_enqueue_script( 'aysnc-auth0-admin-copy-url' );
+	}
+
+	/**
+	 * Get WordPress capability to perform admin actions.
+	 *
+	 * @return string
+	 */
+	public static function get_admin_capability(): string {
+		$capability = apply_filters( 'aysnc_auth0_login_admin_capability', 'manage_options' );
+		if ( ! is_string( $capability ) ) {
+			$capability = 'manage_options';
+		}
+
+		return $capability;
 	}
 }

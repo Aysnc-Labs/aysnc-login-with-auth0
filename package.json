@@ -6,11 +6,13 @@
   "scripts": {
     "env:start": "wp-env start",
     "env:stop": "wp-env stop",
-    "lint:php": "wp-env run --env-cwd='wp-content/plugins/aysnc-auth0-login' cli composer run-script lint",
+    "test:all": "npm run lint:php && npm run test:php && npm run static-analysis:php && npm run test:e2e",
+    "lint:php": "wp-env run --env-cwd=wp-content/plugins/aysnc-auth0-login cli composer run-script lint",
     "static-analysis:php": "composer static-analysis",
-    "test:php": "wp-env run --env-cwd='wp-content/plugins/aysnc-auth0-login' tests-wordpress vendor/bin/phpunit",
+    "test:php": "wp-env run --env-cwd=wp-content/plugins/aysnc-auth0-login tests-wordpress vendor/bin/phpunit",
     "test:e2e": "wp-scripts test-playwright --config .tests/e2e/playwright.config.ts",
-    "test:e2e:headed": "wp-scripts test-playwright --config .tests/e2e/playwright.config.ts --headed"
+    "test:e2e:headed": "wp-scripts test-playwright --config .tests/e2e/playwright.config.ts --headed",
+    "wp": "wp-env run cli --env-cwd=wp-content/plugins/aysnc-auth0-login wp"
   },
   "devDependencies": {
     "@wordpress/e2e-test-utils-playwright": "^1.27.0",

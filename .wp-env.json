@@ -2,7 +2,8 @@
   "config": {
     "WP_DEBUG": true,
     "WP_DEBUG_DISPLAY": true,
-    "WP_DISABLE_FATAL_ERROR_HANDLER": true
+    "WP_DISABLE_FATAL_ERROR_HANDLER": true,
+    "WP_ENV_PHP_VERSION": 8.2
   },
   "plugins": [ "." ],
   "themes": [ "https://downloads.wordpress.org/theme/twentytwentyfive.zip" ]

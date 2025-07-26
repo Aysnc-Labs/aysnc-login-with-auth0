@@ -40,5 +40,9 @@ test.describe(
 				} );
 			}
 		);
+
+		test.afterAll( async ( { requestUtils }: { requestUtils: RequestUtils } ) => {
+			await requestUtils.deactivatePlugin( 'aysnc-auth0-login' );
+		} );
 	}
 );

@@ -2,8 +2,11 @@
 .github export-ignore
 .tests export-ignore
 vendor export-ignore
+node_modules export-ignore
 .editorconfig export-ignore
 CONTRIBUTING.md export-ignore
+package.json export-ignore
+package-lock.json export-ignore
 phpcs.xml export-ignore
 phpstan.neon export-ignore
 phpunit.xml export-ignore

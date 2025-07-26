@@ -51,6 +51,13 @@ jobs:
           path: wp
           key: wp-${{ hashFiles( 'composer.lock' ) }}-${{ hashFiles( '.github/workflows/tests.yml' ) }}
 
+      - name: WP Content cache
+        id: wp-content-cache
+        uses: actions/cache@v4
+        with:
+          path: wp-content
+          key: wp-content-${{ hashFiles( 'composer.lock' ) }}-${{ hashFiles( '.github/workflows/tests.yml' ) }}
+
       - name: Playwright Chromium cache
         id: playwright-chromium-cache
         uses: actions/cache@v4

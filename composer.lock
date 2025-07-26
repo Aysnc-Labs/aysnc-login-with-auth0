@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a29a9acb2a3ce9d06aca38bb4bfe1ea7",
+    "content-hash": "e0d8de7ee05b96d318a2ba93af289bd5",
     "packages": [
         {
             "name": "auth0/auth0-php",
@@ -4283,6 +4283,24 @@
                 "source": "https://github.com/wp-phpunit/wp-phpunit"
             },
             "time": "2025-04-16T01:40:54+00:00"
+        },
+        {
+            "name": "wpackagist-theme/twentytwentyfive",
+            "version": "1.2",
+            "source": {
+                "type": "svn",
+                "url": "https://themes.svn.wordpress.org/twentytwentyfive/",
+                "reference": "1.2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/theme/twentytwentyfive.1.2.zip"
+            },
+            "require": {
+                "composer/installers": "^1.0 || ^2.0"
+            },
+            "type": "wordpress-theme",
+            "homepage": "https://wordpress.org/themes/twentytwentyfive/"
         },
         {
             "name": "yoast/phpunit-polyfills",

@@ -34,6 +34,10 @@ test.describe(
 				await expect( page.locator( '#aysnc_auth0_domain' ) ).toHaveValue( 'domain' );
 				await expect( page.locator( '#aysnc_auth0_client_id' ) ).toHaveValue( 'client-id' );
 				await expect( page.locator( '#aysnc_auth0_client_secret' ) ).toHaveValue( 'client-secret' );
+
+				await page.goto( 'secret-token' ).then( ( response ) => {
+					expect( response.status() ).toBe( 200 );
+				} );
 			}
 		);
 

@@ -32,7 +32,8 @@
     "yoast/phpunit-polyfills": "^4.0.0",
     "phpstan/phpstan": "^2.1.17",
     "wp-coding-standards/wpcs": "*",
-    "wp-phpunit/wp-phpunit": "^6.8"
+    "wp-phpunit/wp-phpunit": "^6.8",
+    "wpackagist-theme/twentytwentyfive": "^1.2"
   },
   "extra": {
     "wordpress-install-dir": "wp"

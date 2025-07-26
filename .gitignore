@@ -2,6 +2,22 @@
 [Tt]humbs.db
 .DS_Store
 
-# --- IDEs.
-.idea
-.vscode
+# --- Root
+/*
+!.github
+!.tests
+!assets
+!inc
+!.editorconfig
+!.gitattributes
+!.gitignore
+!composer.json
+!composer.lock
+!CONTRIBUTING.md
+!LICENSE
+!phpcs.xml
+!phpstan.neon
+!phpunit.xml
+!plugin.php
+!README.md
+!readme.txt

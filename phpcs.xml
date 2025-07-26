@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<ruleset name="WordPress Coding Standards">
+    <rule ref="WordPress-Extra">
+        <exclude name="Generic.Arrays.DisallowShortArraySyntax.Found" />
+        <exclude name="WordPress.Files.FileName.NotHyphenatedLowercase" />
+        <exclude name="WordPress.Files.FileName.InvalidClassFileName" />
+        <exclude name="WordPress.PHP.DisallowShortTernary.Found" />
+        <exclude name="Universal.Arrays.DisallowShortArraySyntax.Found" />
+        <exclude name="Universal.Operators.DisallowShortTernary.Found" />
+        <exclude name="Generic.Functions.CallTimePassByReference" />
+    </rule>
+
+	<file>.tests</file>
+	<file>inc</file>
+    <file>plugin.php</file>
+
+    <exclude-pattern>*.js</exclude-pattern>
+    <exclude-pattern>*/vendor/*</exclude-pattern>
+    <exclude-pattern>*/node_modules/*</exclude-pattern>
+
+    <!--@see https://github.com/WordPress/WordPress-Coding-Standards/issues/2035#issuecomment-1325532520-->
+    <ini name="error_reporting" value="E_ALL &#38; ~E_DEPRECATED" />
+</ruleset>

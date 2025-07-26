@@ -1,0 +1,73 @@
+name: Coding Standards and Tests
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+env:
+  TESTS_DB_NAME: aysnc-tests
+  TESTS_DB_USER: root
+  TESTS_DB_PASSWORD: root
+  TESTS_DB_HOST: 0.0.0.0
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    services:
+      mysql:
+        image: mariadb:10.6
+        env:
+          MYSQL_ROOT_PASSWORD: ${{ env.TESTS_DB_PASSWORD }}
+          MYSQL_DATABASE: ${{ env.TESTS_DB_NAME }}
+        ports:
+          - 3306:3306
+        options: --health-cmd="mysqladmin ping" --health-interval=5s --health-timeout=5s --health-retries=3
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.2'
+          coverage: none
+          tools: composer, cs2pr
+
+      - name: Composer cache
+        id: composer-cache
+        uses: actions/cache@v4
+        with:
+          path: vendor
+          key: composer-${{ hashFiles( 'composer.lock' ) }}-${{ hashFiles( '.github/workflows/tests.yml' ) }}
+
+      - name: WordPress cache
+        id: wp-cache
+        uses: actions/cache@v4
+        with:
+          path: wp
+          key: wp-${{ hashFiles( 'composer.lock' ) }}-${{ hashFiles( '.github/workflows/tests.yml' ) }}
+
+      - name: WP Content cache
+        id: wp-content-cache
+        uses: actions/cache@v4
+        with:
+          path: wp-content
+          key: wp-content-${{ hashFiles( 'composer.lock' ) }}-${{ hashFiles( '.github/workflows/tests.yml' ) }}
+
+      - name: Install Composer dependencies
+        if: steps.composer-cache.outputs.cache-hit != 'true'
+        run: composer install
+
+      - name: PHP Coding standards
+        run: composer lint
+
+      - name: PHPUnit Tests
+        run: composer test
+
+      - name: PHP Static Analysis
+        run: composer static-analysis

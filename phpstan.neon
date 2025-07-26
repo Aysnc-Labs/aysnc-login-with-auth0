@@ -1,0 +1,9 @@
+parameters:
+	level: max
+	scanDirectories:
+		- wp
+		- vendor/wp-phpunit
+	paths:
+		- .tests
+		- inc
+		- plugin.php

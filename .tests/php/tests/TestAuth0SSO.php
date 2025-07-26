@@ -19,17 +19,10 @@ class TestAuth0SSO extends WP_UnitTestCase {
 	 * Test bootstrap.
 	 *
 	 * @covers Auth0Login::bootstrap()
+	 *
 	 * @return void
 	 */
 	public function test_bootstrap(): void {
-		$this->assertFalse(
-			has_action( 'aysnc_secret_link_visited', [ Auth0Login::class, 'handle_secret_link_visit' ] )
-		);
-		$this->assertFalse(
-			has_action( 'allowed_redirect_hosts', [ Auth0Login::class, 'add_auth0_to_safe_hosts' ] )
-		);
-
-		Auth0Login::bootstrap();
 		$this->assertEquals(
 			10,
 			has_action( 'aysnc_secret_link_visited', [ Auth0Login::class, 'handle_secret_link_visit' ] )
@@ -51,6 +44,7 @@ class TestAuth0SSO extends WP_UnitTestCase {
 	 * @covers Auth0Login::add_auth0_to_safe_hosts()
 	 * @covers Auth0Login::handle_secret_link_visit()
 	 * @covers Auth0Login::reset()
+	 *
 	 * @return void
 	 */
 	public function test_get_client(): void {

@@ -1,9 +1,10 @@
-# Ignore Open Source stuff in export
+# Ignore stuff in export
 .github export-ignore
+.tests export-ignore
+vendor export-ignore
+.editorconfig export-ignore
 CONTRIBUTING.md export-ignore
-
-# Ignore tests in export.
-/tests/ export-ignore
-
-# Ignore WP Org files in export.
+phpcs.xml export-ignore
+phpstan.neon export-ignore
+phpunit.xml export-ignore
 readme.txt export-ignore

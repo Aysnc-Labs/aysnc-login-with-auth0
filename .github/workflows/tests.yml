@@ -19,6 +19,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       PLAYWRIGHT_BROWSERS_PATH: 0
+      PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD: 1
     services:
       mysql:
         image: mariadb:10.6
@@ -90,7 +91,9 @@ jobs:
 
       - name: Install only Chromium for Playwright
         if: steps.playwright-chromium-cache.outputs.cache-hit != 'true'
-        run: npx playwright install chromium
+        run: |
+          npx playwright install chromium
+          npx playwright install-deps
 
       - name: PHP Coding standards
         run: composer lint

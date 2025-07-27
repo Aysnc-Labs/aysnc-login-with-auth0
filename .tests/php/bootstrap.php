@@ -22,7 +22,7 @@ function load_environment(): void {
 
 	// Options.
 	update_option( 'permalink_structure', '/%postname%/' );
-	update_option( 'blogname', 'Aysnc Labs' );
+	update_option( 'blogname', 'Aysnc' );
 	update_option( 'admin_email', 'test@aysnc.dev' );
 
 	// Activate plugins.

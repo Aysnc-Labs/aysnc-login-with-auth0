@@ -1,8 +1,8 @@
 <?php
 /**
  * Plugin Name: Aysnc Auth0 Login
- * Description: Auth0 Login for WordPress from Aysnc Labs.
- * Author: Aysnc Labs
+ * Description: Auth0 Login for WordPress from Aysnc.
+ * Author: Aysnc
  * Author URI: https://aysnc.dev
  * Version: 1.0.0
  * Requires PHP: 8.2

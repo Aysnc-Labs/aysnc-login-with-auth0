@@ -53,7 +53,7 @@ class TestAuth0SSO extends WP_UnitTestCase {
 		$this->assertNull( Auth0Login::get_domain() );
 		$this->assertNull( Auth0Login::get_client_id() );
 		$this->assertNull( Auth0Login::get_client_secret() );
-		$this->assertEquals( '', Auth0Login::get_cookie_secret() );
+		$this->assertEquals( AUTH_KEY, Auth0Login::get_cookie_secret() );
 		$this->assertEquals( [ 'test' ], Auth0Login::add_auth0_to_safe_hosts( [ 'test' ] ) );
 
 		// Prepare variables.
@@ -78,9 +78,7 @@ class TestAuth0SSO extends WP_UnitTestCase {
 		add_action( 'aysnc_auth0_sso_secret_link_error', $action_function );
 
 		// Test with just auth key.
-		define( 'AUTH_KEY', 'auth-key' );
 		Auth0Login::reset();
-		$this->assertEquals( 'auth-key', Auth0Login::get_cookie_secret() );
 		$this->assertNull( Auth0Login::get_client() );
 		Auth0Login::handle_secret_link_visit();
 		$this->assertTrue( $redirected_home );

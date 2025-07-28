@@ -2,7 +2,7 @@
 /**
  * Bootstrap for unit tests.
  *
- * @package wordpress-plugins
+ * @package aysnc/aysnc-auth0-login
  */
 
 namespace Aysnc\Auth0Login;
@@ -36,10 +36,10 @@ function load_environment(): void {
 }
 
 // Load PHPUnit functions.
-require_once getenv( 'WP_PHPUNIT__DIR' ) . '/includes/functions.php';
+require_once getenv( 'WP_TESTS_DIR' ) . '/includes/functions.php';
 
 // Load the test environment.
 tests_add_filter( 'muplugins_loaded', __NAMESPACE__ . '\\load_environment' );
 
 // Bootstrap PHPUnit tests.
-require_once getenv( 'WP_PHPUNIT__DIR' ) . '/includes/bootstrap.php';
+require_once getenv( 'WP_TESTS_DIR' ) . '/includes/bootstrap.php';

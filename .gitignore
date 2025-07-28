@@ -11,10 +11,13 @@
 !.editorconfig
 !.gitattributes
 !.gitignore
+!.wp-env.json
 !composer.json
 !composer.lock
 !CONTRIBUTING.md
 !LICENSE
+!package.json
+!package-lock.json
 !phpcs.xml
 !phpstan.neon
 !phpunit.xml

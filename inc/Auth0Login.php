@@ -2,7 +2,7 @@
 /**
  * Auth0: Single Sign-On.
  *
- * @package aysnc/aysnc-auth0-login
+ * @package aysnc/aysnc-login-with-auth0
  */
 
 namespace Aysnc\Auth0Login;

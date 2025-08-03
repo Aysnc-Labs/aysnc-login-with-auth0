@@ -2,7 +2,7 @@
 
 # Auth0 Login for WordPress
 
-![GitHub Actions](https://github.com/Aysnc-Labs/aysnc-auth0-login/actions/workflows/tests.yml/badge.svg)
+![GitHub Actions](https://github.com/Aysnc-Labs/aysnc-login-with-auth0/actions/workflows/tests.yml/badge.svg)
 
 A simple, secure way to log in to WordPress using Auth0. Hides the default login screen with a redirect to Auth0.
 
@@ -24,14 +24,14 @@ You can install this plugin in one of two ways:
 
 ### Option 1: WordPress Plugin Repository (Basic)
 
-Install this plugin via the WordPress Plugin Repository by downloading it from: https://wordpress.org/plugins/aysnc-auth0-login/ or by searching for "Aysnc Auth0 Login" in your WordPress admin panel.
+Install this plugin via the WordPress Plugin Repository by downloading it from: https://wordpress.org/plugins/aysnc-login-with-auth0/ or by searching for "Aysnc Login with Auth0" in your WordPress admin panel.
 
 ### Option 2: Composer (Recommended)
 
 Install this plugin via Composer by running the following command:
 
 ```bash
-composer require aysnc/aysnc-auth0-login
+composer require aysnc/aysnc-login-with-auth0
 ```
 
 ## Configuration

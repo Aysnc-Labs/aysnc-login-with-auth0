@@ -1,6 +1,6 @@
 <?php
 /**
- * Plugin Name: Aysnc Auth0 Login
+ * Plugin Name: Aysnc Login with Auth0
  * Description: Auth0 Login for WordPress from Aysnc.
  * Author: Aysnc
  * Author URI: https://aysnc.dev
@@ -8,7 +8,7 @@
  * Requires PHP: 8.2
  * License: MIT
  *
- * @package aysnc/aysnc-auth0-login
+ * @package aysnc/aysnc-login-with-auth0
  */
 
 namespace Aysnc\Auth0Login;

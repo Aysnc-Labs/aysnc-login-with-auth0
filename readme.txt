@@ -1,4 +1,4 @@
-=== Aysnc Auth0 Login ===
+=== Aysnc Login with Auth0 ===
 Contributors: aysnc, junaidbhura
 Tags: auth0, login, sso, single-sign-on
 Requires at least: 6.8
@@ -11,7 +11,7 @@ A simple, secure way to log in to WordPress using Auth0. Hides the default login
 
 == Description ==
 
-[❤️ Contribute on GitHub](https://github.com/Aysnc-Labs/wordpress-plugins/tree/main/plugins/aysnc-auth0-login)
+[❤️ Contribute on GitHub](https://github.com/Aysnc-Labs/wordpress-plugins/tree/main/plugins/aysnc-login-with-auth0)
 
 Auth0 Login for WordPress provides a simple, secure way to log in to WordPress using Auth0. It hides the default login screen with a redirect to Auth0.
 

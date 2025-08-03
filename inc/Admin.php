@@ -2,7 +2,7 @@
 /**
  * Auth0: Admin.
  *
- * @package aysnc/aysnc-auth0-login
+ * @package aysnc/aysnc-login-with-auth0
  */
 
 namespace Aysnc\Auth0Login;
@@ -101,7 +101,7 @@ class Admin {
 		// Register settings section.
 		add_settings_section(
 			'aysnc_auth0_section',
-			__( 'Auth0 Settings', 'aysnc-auth0-login' ),
+			__( 'Auth0 Settings', 'aysnc-login-with-auth0' ),
 			[ __CLASS__, 'settings_section_callback' ],
 			self::$option_group
 		);
@@ -109,7 +109,7 @@ class Admin {
 		// Register settings fields.
 		add_settings_field(
 			'aysnc_auth0_secret_login_token',
-			__( 'Secret Login Token', 'aysnc-auth0-login' ) . '<span class="required">*</span>',
+			__( 'Secret Login Token', 'aysnc-login-with-auth0' ) . '<span class="required">*</span>',
 			[ __CLASS__, 'secret_login_token_field_callback' ],
 			self::$option_group,
 			'aysnc_auth0_section',
@@ -120,7 +120,7 @@ class Admin {
 
 		add_settings_field(
 			'aysnc_auth0_domain',
-			__( 'Domain', 'aysnc-auth0-login' ) . '<span class="required">*</span>',
+			__( 'Domain', 'aysnc-login-with-auth0' ) . '<span class="required">*</span>',
 			[ __CLASS__, 'domain_field_callback' ],
 			self::$option_group,
 			'aysnc_auth0_section',
@@ -131,7 +131,7 @@ class Admin {
 
 		add_settings_field(
 			'aysnc_auth0_client_id',
-			__( 'Client ID', 'aysnc-auth0-login' ) . '<span class="required">*</span>',
+			__( 'Client ID', 'aysnc-login-with-auth0' ) . '<span class="required">*</span>',
 			[ __CLASS__, 'client_id_field_callback' ],
 			self::$option_group,
 			'aysnc_auth0_section',
@@ -142,7 +142,7 @@ class Admin {
 
 		add_settings_field(
 			'aysnc_auth0_client_secret',
-			__( 'Client Secret', 'aysnc-auth0-login' ) . '<span class="required">*</span>',
+			__( 'Client Secret', 'aysnc-login-with-auth0' ) . '<span class="required">*</span>',
 			[ __CLASS__, 'client_secret_field_callback' ],
 			self::$option_group,
 			'aysnc_auth0_section',
@@ -159,8 +159,8 @@ class Admin {
 	 */
 	public static function add_options_page(): void {
 		add_options_page(
-			__( 'Auth0 Settings', 'aysnc-auth0-login' ),
-			__( 'Auth0', 'aysnc-auth0-login' ),
+			__( 'Auth0 Settings', 'aysnc-login-with-auth0' ),
+			__( 'Auth0', 'aysnc-login-with-auth0' ),
 			self::get_admin_capability(),
 			self::$option_group,
 			[ __CLASS__, 'render_options_page' ]
@@ -177,12 +177,12 @@ class Admin {
 		if ( ! self::all_wp_config_values_defined() ) : ?>
 			<div class="notice notice-warning inline">
 				<p>
-					<strong><?php echo esc_html__( 'Recommended: Define Auth0 credentials in wp-config.php', 'aysnc-auth0-login' ); ?></strong>
+					<strong><?php echo esc_html__( 'Recommended: Define Auth0 credentials in wp-config.php', 'aysnc-login-with-auth0' ); ?></strong>
 					<br>
-					<?php echo esc_html__( 'For better security, we recommend defining your Auth0 credentials directly in your wp-config.php file instead of storing them in the database.', 'aysnc-auth0-login' ); ?>
+					<?php echo esc_html__( 'For better security, we recommend defining your Auth0 credentials directly in your wp-config.php file instead of storing them in the database.', 'aysnc-login-with-auth0' ); ?>
 				</p>
 				<p>
-					<?php echo esc_html__( 'Add the following lines to your wp-config.php file:', 'aysnc-auth0-login' ); ?>
+					<?php echo esc_html__( 'Add the following lines to your wp-config.php file:', 'aysnc-login-with-auth0' ); ?>
 					<br><br>
 					<code>define( 'AYSNC_AUTH0_SECRET_LOGIN_TOKEN', 'your-secret-token' );</code>
 					<br>
@@ -202,23 +202,23 @@ class Admin {
 			$login_url = SecretLoginLink::get_link();
 			?>
 			<div class="notice notice-warning inline" style="margin-top: 10px; margin-bottom: 0; padding-bottom: 12px;">
-				<p><strong><?php echo esc_html__( 'Your WordPress login URL is now:', 'aysnc-auth0-login' ); ?></strong></p>
+				<p><strong><?php echo esc_html__( 'Your WordPress login URL is now:', 'aysnc-login-with-auth0' ); ?></strong></p>
 				<p>
-					<code id="aysnc-auth0-login-url"><?php echo esc_url( $login_url ); ?></code>
-					<button type="button" class="button button-small button-secondary aysnc-copy-button" data-clipboard-target="#aysnc-auth0-login-url" aria-label="<?php esc_attr_e( 'Copy login URL to clipboard', 'aysnc-auth0-login' ); ?>">
-						<?php esc_html_e( 'Copy', 'aysnc-auth0-login' ); ?>
+					<code id="aysnc-login-with-auth0-url"><?php echo esc_url( $login_url ); ?></code>
+					<button type="button" class="button button-small button-secondary aysnc-copy-button" data-clipboard-target="#aysnc-login-with-auth0-url" aria-label="<?php esc_attr_e( 'Copy login URL to clipboard', 'aysnc-login-with-auth0' ); ?>">
+						<?php esc_html_e( 'Copy', 'aysnc-login-with-auth0' ); ?>
 					</button>
 				</p>
-				<p><strong><?php echo esc_html__( 'Important:', 'aysnc-auth0-login' ); ?></strong>
-				<?php echo esc_html__( 'Save this URL in a secure location. You will need it to access your WordPress login page, as the standard wp-login.php is now disabled.', 'aysnc-auth0-login' ); ?></p>
+				<p><strong><?php echo esc_html__( 'Important:', 'aysnc-login-with-auth0' ); ?></strong>
+				<?php echo esc_html__( 'Save this URL in a secure location. You will need it to access your WordPress login page, as the standard wp-login.php is now disabled.', 'aysnc-login-with-auth0' ); ?></p>
 
 				<?php if ( defined( 'AYSNC_AUTH0_SECRET_LOGIN_TOKEN' ) ) : ?>
 					<hr>
-					<p><?php esc_html_e( 'If you have changed the Secret Login Token in wp-config.php, click the button below to update the login URL.', 'aysnc-auth0-login' ); ?></p>
+					<p><?php esc_html_e( 'If you have changed the Secret Login Token in wp-config.php, click the button below to update the login URL.', 'aysnc-login-with-auth0' ); ?></p>
 					<form method="post">
 						<?php wp_nonce_field( 'aysnc_flush_permalinks', 'aysnc_flush_permalinks_nonce' ); ?>
 						<input type="hidden" name="action" value="aysnc_flush_permalinks">
-						<?php submit_button( __( 'Flush Permalinks', 'aysnc-auth0-login' ), 'secondary', 'flush_permalinks', false ); ?>
+						<?php submit_button( __( 'Flush Permalinks', 'aysnc-login-with-auth0' ), 'secondary', 'flush_permalinks', false ); ?>
 					</form>
 				<?php endif; ?>
 			</div>
@@ -242,9 +242,9 @@ class Admin {
 		echo '<input type="text" id="aysnc_auth0_secret_login_token" name="aysnc_auth0_secret_login_token" value="' . esc_attr( $value ) . '" class="regular-text"' . ( $is_defined ? ' disabled' : ' required' ) . '>';
 
 		if ( $is_defined ) {
-			echo '<p class="description">' . esc_html__( 'This value is defined in wp-config.php', 'aysnc-auth0-login' ) . '</p>';
+			echo '<p class="description">' . esc_html__( 'This value is defined in wp-config.php', 'aysnc-login-with-auth0' ) . '</p>';
 		} else {
-			echo '<p class="description">' . esc_html__( 'Enter a unique, random string to use as your secret login token. This will be used to create a special login URL.', 'aysnc-auth0-login' ) . '</p>';
+			echo '<p class="description">' . esc_html__( 'Enter a unique, random string to use as your secret login token. This will be used to create a special login URL.', 'aysnc-login-with-auth0' ) . '</p>';
 		}
 	}
 
@@ -264,9 +264,9 @@ class Admin {
 		echo '<input type="text" id="aysnc_auth0_domain" name="aysnc_auth0_domain" value="' . esc_attr( $value ) . '" class="regular-text"' . ( $is_defined ? ' disabled' : ' required' ) . '>';
 
 		if ( $is_defined ) {
-			echo '<p class="description">' . esc_html__( 'This value is defined in wp-config.php', 'aysnc-auth0-login' ) . '</p>';
+			echo '<p class="description">' . esc_html__( 'This value is defined in wp-config.php', 'aysnc-login-with-auth0' ) . '</p>';
 		} else {
-			echo '<p class="description">' . esc_html__( 'Enter your Auth0 domain (e.g., your-tenant.auth0.com).', 'aysnc-auth0-login' ) . '</p>';
+			echo '<p class="description">' . esc_html__( 'Enter your Auth0 domain (e.g., your-tenant.auth0.com).', 'aysnc-login-with-auth0' ) . '</p>';
 		}
 	}
 
@@ -286,9 +286,9 @@ class Admin {
 		echo '<input type="password" id="aysnc_auth0_client_id" name="aysnc_auth0_client_id" value="' . esc_attr( $value ) . '" class="regular-text"' . ( $is_defined ? ' disabled' : ' required' ) . '>';
 
 		if ( $is_defined ) {
-			echo '<p class="description">' . esc_html__( 'This value is defined in wp-config.php', 'aysnc-auth0-login' ) . '</p>';
+			echo '<p class="description">' . esc_html__( 'This value is defined in wp-config.php', 'aysnc-login-with-auth0' ) . '</p>';
 		} else {
-			echo '<p class="description">' . esc_html__( 'Enter your Auth0 application Client ID.', 'aysnc-auth0-login' ) . '</p>';
+			echo '<p class="description">' . esc_html__( 'Enter your Auth0 application Client ID.', 'aysnc-login-with-auth0' ) . '</p>';
 		}
 	}
 
@@ -308,9 +308,9 @@ class Admin {
 		echo '<input type="password" id="aysnc_auth0_client_secret" name="aysnc_auth0_client_secret" value="' . esc_attr( $value ) . '" class="regular-text"' . ( $is_defined ? ' disabled' : ' required' ) . '>';
 
 		if ( $is_defined ) {
-			echo '<p class="description">' . esc_html__( 'This value is defined in wp-config.php', 'aysnc-auth0-login' ) . '</p>';
+			echo '<p class="description">' . esc_html__( 'This value is defined in wp-config.php', 'aysnc-login-with-auth0' ) . '</p>';
 		} else {
-			echo '<p class="description">' . esc_html__( 'Enter your Auth0 application Client Secret.', 'aysnc-auth0-login' ) . '</p>';
+			echo '<p class="description">' . esc_html__( 'Enter your Auth0 application Client Secret.', 'aysnc-login-with-auth0' ) . '</p>';
 		}
 	}
 
@@ -323,7 +323,7 @@ class Admin {
 		$all_config_defined = self::all_wp_config_values_defined();
 		$plugin_dir_url     = plugin_dir_url( __DIR__ );
 		$auth0_logo_url     = $plugin_dir_url . 'assets/auth0-logo.svg';
-		$auth0_site_url     = 'https://auth0.com/?utm_source=wordpress&utm_medium=plugin&utm_campaign=aysnc-auth0-login';
+		$auth0_site_url     = 'https://auth0.com/?utm_source=wordpress&utm_medium=plugin&utm_campaign=aysnc-login-with-auth0';
 		?>
 		<div class="wrap">
 			<div style="display: flex; align-items: center; margin-bottom: 20px;">
@@ -408,7 +408,7 @@ class Admin {
 			// Show the notice.
 			?>
 			<div class="notice notice-success is-dismissible">
-				<p><?php esc_html_e( 'Login URL has been updated successfully. The secret login link should now work with your current configuration.', 'aysnc-auth0-login' ); ?></p>
+				<p><?php esc_html_e( 'Login URL has been updated successfully. The secret login link should now work with your current configuration.', 'aysnc-login-with-auth0' ); ?></p>
 			</div>
 			<?php
 		}
@@ -486,7 +486,7 @@ class Admin {
 			'aysnc-auth0-admin-copy-url',
 			'aysnc_auth0_admin',
 			[
-				'copied_text' => __( 'Copied!', 'aysnc-auth0-login' ),
+				'copied_text' => __( 'Copied!', 'aysnc-login-with-auth0' ),
 			]
 		);
 

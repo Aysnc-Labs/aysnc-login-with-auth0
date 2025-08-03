@@ -1,5 +1,5 @@
 {
-  "name": "aysnc/aysnc-auth0-login",
+  "name": "aysnc/aysnc-login-with-auth0",
   "version": "1.0.0",
   "license": "MIT",
   "type": "wordpress-plugin",

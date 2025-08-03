@@ -1,6 +1,6 @@
 ![Auth0 Logo](assets/auth0-logo.svg)
 
-# Auth0 Login for WordPress
+# Login with Auth0 for WordPress
 
 ![GitHub Actions](https://github.com/Aysnc-Labs/aysnc-login-with-auth0/actions/workflows/tests.yml/badge.svg)
 

@@ -6,4 +6,4 @@ parameters:
 	paths:
 		- .tests
 		- inc
-		- plugin.php
+		- aysnc-login-with-auth0.php

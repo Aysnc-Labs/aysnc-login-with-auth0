@@ -32,7 +32,7 @@ function load_environment(): void {
 	update_option( 'active_plugins', $plugins_to_activate );
 
 	// Load this plugin.
-	require __DIR__ . '/../../plugin.php';
+	require __DIR__ . '/../../aysnc-login-with-auth0.php';
 }
 
 // Load PHPUnit functions.

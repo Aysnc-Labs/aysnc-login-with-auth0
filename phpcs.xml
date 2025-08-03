@@ -12,7 +12,7 @@
 
 	<file>.tests</file>
 	<file>inc</file>
-    <file>plugin.php</file>
+    <file>aysnc-login-with-auth0.php</file>
 
     <exclude-pattern>*.js</exclude-pattern>
     <exclude-pattern>*/vendor/*</exclude-pattern>

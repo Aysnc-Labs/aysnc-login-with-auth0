@@ -1,0 +1,10 @@
+/**
+ * Admin styles for Auth0 Login plugin.
+ */
+
+/* Required field asterisk styling */
+.form-table th .required {
+	color: #dc3232;
+	font-weight: bold;
+	margin-left: 3px;
+}

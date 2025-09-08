@@ -31,7 +31,6 @@ class Admin {
 		add_action( 'admin_init', [ __CLASS__, 'handle_flush_permalinks_on_save' ] );
 		add_action( 'admin_init', [ __CLASS__, 'handle_flush_permalinks' ] );
 		add_action( 'admin_notices', [ __CLASS__, 'show_permalink_notice' ] );
-		add_action( 'admin_head', [ __CLASS__, 'add_required_field_styles' ] );
 		add_action( 'admin_enqueue_scripts', [ __CLASS__, 'enqueue_admin_scripts' ] );
 
 		// Flush permalinks when login token setting is updated.
@@ -430,31 +429,6 @@ class Admin {
 		}
 	}
 
-	/**
-	 * Add styles for required fields.
-	 *
-	 * @return void
-	 */
-	public static function add_required_field_styles(): void {
-		// Only add styles on our settings page
-		$screen = get_current_screen();
-		if ( ! $screen || 'settings_page_' . self::$option_group !== $screen->id ) {
-			return;
-		}
-
-		// Add CSS for required field asterisk
-		echo '<style>
-			.form-table th .required {
-				color: #dc3232;
-				font-weight: bold;
-				margin-left: 3px;
-			}
-			.aysnc-copy-button {
-				margin-left: 10px;
-				vertical-align: middle;
-			}
-		</style>';
-	}
 
 	/**
 	 * Enqueue admin scripts and styles.
@@ -470,6 +444,7 @@ class Admin {
 
 		$plugin_dir_url = plugin_dir_url( __DIR__ );
 		$script_url     = $plugin_dir_url . 'assets/js/admin-copy-url.js';
+		$style_url      = $plugin_dir_url . 'assets/css/admin-styles.css';
 		$version        = '1.0.0';
 
 		// Register and enqueue the script
@@ -481,6 +456,14 @@ class Admin {
 			true
 		);
 
+		// Register and enqueue the styles
+		wp_register_style(
+			'aysnc-auth0-admin-styles',
+			$style_url,
+			[],
+			$version
+		);
+
 		// Localize the script with translation strings.
 		wp_localize_script(
 			'aysnc-auth0-admin-copy-url',
@@ -490,8 +473,9 @@ class Admin {
 			]
 		);
 
-		// Enqueue the script.
+		// Enqueue the script and styles.
 		wp_enqueue_script( 'aysnc-auth0-admin-copy-url' );
+		wp_enqueue_style( 'aysnc-auth0-admin-styles' );
 	}
 
 	/**

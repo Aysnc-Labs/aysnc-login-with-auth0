@@ -44,10 +44,6 @@ class TestAdmin extends WP_UnitTestCase {
 		);
 		$this->assertEquals(
 			10,
-			has_action( 'admin_head', [ Admin::class, 'add_required_field_styles' ] )
-		);
-		$this->assertEquals(
-			10,
 			has_action( 'admin_enqueue_scripts', [ Admin::class, 'enqueue_admin_scripts' ] )
 		);
 		$this->assertEquals(

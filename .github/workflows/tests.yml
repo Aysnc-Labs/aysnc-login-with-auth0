@@ -63,7 +63,7 @@ jobs:
         if: steps.composer-cache.outputs.cache-hit != 'true'
         run: composer install
 
-      - name: PHP Coding standards
+      - name: PHP Coding Standards
         run: composer lint
 
       - name: PHPUnit Tests

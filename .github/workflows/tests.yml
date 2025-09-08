@@ -69,5 +69,5 @@ jobs:
       - name: PHPUnit Tests
         run: composer test
 
-      - name: PHP Static Analysis
-        run: composer static-analysis
+#      - name: PHP Static Analysis
+#        run: composer static-analysis

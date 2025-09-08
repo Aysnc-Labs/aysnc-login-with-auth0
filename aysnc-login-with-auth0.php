@@ -3,7 +3,7 @@
  * Plugin Name: Aysnc Login with Auth0
  * Description: Auth0 Login for WordPress from Aysnc.
  * Author: Aysnc
- * Author URI: https://aysnc.dev
+ * Author URI: https://aysnc.com.au
  * Version: 1.0.0
  * Requires PHP: 8.2
  * License: MIT

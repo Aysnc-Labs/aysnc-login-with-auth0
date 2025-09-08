@@ -63,6 +63,30 @@ After configuring the plugin:
 
 If you change your Secret Login Token in wp-config.php, use the "Update Login URL" button in the Auth0 settings page to refresh the login URL.
 
+== External Services ==
+
+This plugin connects to Auth0, a third-party authentication service, to provide secure user authentication for your WordPress site.
+
+= What is Auth0 and what is it used for? =
+
+Auth0 is a cloud-based identity and access management platform that provides authentication and authorization services. This plugin uses Auth0 to authenticate users instead of using WordPress's built-in authentication system.
+
+= What data is sent and when? =
+
+The following data is transmitted to Auth0:
+* When a user attempts to log in: The user is redirected to Auth0's servers for authentication
+* During the OAuth flow: Auth0 receives user credentials and returns authentication tokens and user profile information (email, name, etc.) back to your WordPress site
+* User profile information such as email address is retrieved from Auth0 to match or create WordPress user accounts
+
+= Service Information =
+
+**Service Provider:** Auth0, Inc.  
+**Service Website:** https://auth0.com/  
+**Terms of Service:** https://auth0.com/terms  
+**Privacy Policy:** https://auth0.com/privacy  
+
+**Important:** You must configure your own Auth0 application and are responsible for reviewing and complying with Auth0's terms of service and privacy policy. The data processing depends on your Auth0 configuration and the information users provide during authentication.
+
 == Installation ==
 
 1. Upload 'aysnc-wordpress-auth0' to the '/wp-content/plugins/' directory

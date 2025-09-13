@@ -6,8 +6,10 @@
 /*
 !.github
 !.tests
+!.wordpress-org
 !assets
 !inc
+!.distignore
 !.editorconfig
 !.gitattributes
 !.gitignore

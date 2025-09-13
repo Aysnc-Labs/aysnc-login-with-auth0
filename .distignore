@@ -1,0 +1,14 @@
+/.github
+/.tests
+/.wordpress-org
+/vendor
+.distignore
+.editorconfig
+.gitattributes
+.gitignore
+CONTRIBUTING.md
+LICENSE
+phpcs.xml
+phpstan.neon
+phpunit.xml
+README.md

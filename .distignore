@@ -2,6 +2,8 @@
 /.github
 /.tests
 /.wordpress-org
+assets/screenshot-1.png
+assets/screenshot-2.png
 .distignore
 .editorconfig
 .gitattributes

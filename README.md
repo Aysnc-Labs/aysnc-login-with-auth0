@@ -48,7 +48,7 @@ You can configure the plugin either through the WordPress admin interface or by 
    - **Client Secret**: Your Auth0 application Client Secret
 3. Save changes
 
-![WordPress Admin Settings Screenshot](.wordpress-org/screenshot-1.png)
+![WordPress Admin Settings Screenshot](assets/screenshot-1.png)
 
 ### Option 2: wp-config.php Configuration (Recommended)
 
@@ -64,7 +64,7 @@ define( 'AYSNC_AUTH0_CLIENT_SECRET', 'your-client-secret' );
 
 This method prevents your Auth0 credentials from being stored in the database.
 
-![WordPress Config Settings Screenshot](.wordpress-org/screenshot-2.png)
+![WordPress Config Settings Screenshot](assets/screenshot-2.png)
 
 ### 🚨 Important: Don't lose your login URL!
 

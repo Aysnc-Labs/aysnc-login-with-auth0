@@ -1,8 +1,11 @@
 # Ignore stuff in export
 .github export-ignore
 .tests export-ignore
+.wordpress-org export-ignore
 vendor export-ignore
+.distignore export-ignore
 .editorconfig export-ignore
+.gitignore export-ignore
 CONTRIBUTING.md export-ignore
 phpcs.xml export-ignore
 phpstan.neon export-ignore

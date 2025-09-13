@@ -2,7 +2,6 @@
 /.github
 /.tests
 /.wordpress-org
-/vendor
 .distignore
 .editorconfig
 .gitattributes
